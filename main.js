@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-
     const string1 = 'hello world';
     const string2 ='I like js';
     let count = 0;
