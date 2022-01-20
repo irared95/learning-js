@@ -1,18 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+// const age = 10;
+// const isAccompanied = false;
+// if(age >= 12 || isAccompanied){
+//     console.log('вход разрешен');
+// }else{
+//     console.log('вход не разрешен');
+// }
+//
+// function accessWatchFilm(age, isAccompanied){
+//     if(age >= 12 || isAccompanied){
+//         console.log('вход разрешен');
+//     }else{
+//         console.log('вход не разрешен');
+//     }
+// }
+// accessWatchFilm(12, true);
+// accessWatchFilm(10, true);
+// accessWatchFilm(10, false);
 
-    const string1 = 'hello world';
-    const string2 ='I like js';
-    let count = 0;
-    const h1= document.querySelector('.head');
 
-    setInterval(function () {
-        count++
-        if (count % 2){
-            h1.innerHTML=string1
+    function checkPassword(password){
+        const passwordLen = password.length;
+        const passwordLastLetter = password[passwordLen-1];
+        const passwordFirstLetter= password[0];
+
+        if (passwordLen >= 5 && typeof(+passwordLastLetter) === 'number' && passwordFirstLetter === passwordFirstLetter.toUpperCase()) {
+            console.log('норм пароль');
+        } else {
+            console.log('поменяйте пароль')
         }
-            else{
-            h1.innerHTML=string2
-        }
-    }, 1000);
+    }
+
+    checkPassword('Ffdfge2');
 });
+
