@@ -111,4 +111,54 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(output)
     console.log(input)
 
+    //добавляет 1 в цикле
+    // let i = 0;
+    // while (++i < 5) {
+    //     debugger;
+    //     console.log(i)
+    // }
+
+    //добавляет 1 в теле цикла
+    // let j = 0;
+    // while (j++ < 5) {
+    //     debugger;
+    //     console.log(j)
+    // }
+    ///
+
+    // for (let i = 0; i < 5; i++) {
+    //     console.log(i)
+    // }
+    //
+    //
+    // for (let j = 0; j < 5; ++j){
+    //     console.log(j)
+    // }
+
+    // При помощи цикла for выведите чётные числа от 2 до 10.
+
+    // for (let i = 2; i < 10; i++) {
+    //
+    //     if (i % 2 === 0) {
+    //         console.log(i)
+    //     }
+    // }
+
+    // for (let i = 0; i < 3; i++) {
+    //     console.log( `number ${i}!` );
+    // }
+    //
+    // let i = 0;
+    // while( i < 3 ){
+    //     console.log( `number ${i}!` );
+    //     i++
+    // }
+
+    // let num;
+    //
+    // do {
+    //     num = prompt("Введите число больше 100?", 0);
+    // } while (num <= 100 && num);
+
+
 });
