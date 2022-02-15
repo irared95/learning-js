@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // let newHeadingText = prompt("Введите новый заголовок:");
     // $("#main__heading").text(newHeadingText);
     // $("body").append("<p>Это новый параграф</p>");
@@ -99,30 +99,57 @@ document.addEventListener('DOMContentLoaded', function() {
     let leftOffset = 0;
     let topOffset = 0;
 
-    let moveHeading = function (){
-     $('#main__heading').offset({left: leftOffset, top: topOffset});
+    let moveHeading = function () {
+        $('#main__heading').offset({left: leftOffset, top: topOffset});
         //сдвиг слево направо
-        if (leftOffset < 200 && topOffset === 0){
+        if (leftOffset < 200 && topOffset === 0) {
             leftOffset++
             console.log(1)
         }
         //сдвиг сверху вниз
         if (leftOffset >= 200 && topOffset < 200) {
-           topOffset ++;
+            topOffset++;
             console.log(2)
         }
         //сдвиг справо налево
-        if (leftOffset <= 200 && topOffset >= 200){
-          leftOffset--
+        if (leftOffset <= 200 && topOffset >= 200) {
+            leftOffset--
             console.log(3)
         }
-       /////сдвиг сверзу внизу
-        if (leftOffset === 0 && topOffset <= 200){
-          topOffset--
+        /////сдвиг сверзу внизу
+        if (leftOffset === 0 && topOffset <= 200) {
+            topOffset--
         }
     }
-     setInterval(moveHeading, 5);
 
+    //запуск интервала анимаций по квадрату
+    let intervalLength = 15;
+    let intervalId = setInterval(moveHeading, intervalLength);
+    //счетик кликов
+    let counter= 0;
+    //текст вывода счетчика кликов
+    let clickText = 'you click ';
+    function clickAnimation(event) {
+        //вывод текста в заголовок
+        // console.log(clickText + counter)
+        //вывод текста победы когда кликнули блольше 10 раз
+        if (counter < 10){
+            $("#main__heading").text(clickText + counter)
+            counter++
+            clearInterval(intervalId)
+            intervalLength -=2;
+            intervalId = setInterval(moveHeading, intervalLength)
+        }
+        if (counter >= 10){
+            $("#main__heading").text("you win");
+            clearInterval(intervalId)
+        }
+        //увелечение количества раз кликов
+        console.log(counter)
+    }
 
+    //клик по заголовку
+    $("h1").on("click", clickAnimation);
+    
 });
 
