@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+
     function renderTaskElement(item){
         const listItem = document.createElement('li')
         const itemText = document.createElement('p')
